@@ -1,11 +1,13 @@
-const sumAll = function(startNum, endNum) {
-
-  const isPositiveNums = [startNum, endNum].every(num => num > 0);
-  const isIntegerNums = [startNum, endNum].every(num => Number.isInteger(num));
-  const isTypeNums = [startNum, endNum].every(num => typeof num === 'number');
+const sumAll = function(...nums) {
+  const isPositiveNums = nums.every(num => num > 0);
+  const isIntegerNums = nums.every(num => Number.isInteger(num));
+  const isTypeNums = nums.every(num => typeof num === 'number');
   const isValidNums = isPositiveNums && isIntegerNums && isTypeNums;
 
   if (isValidNums) {
+    let startNum = nums.at(0);
+    let endNum = nums.at(-1);
+
     if (startNum > endNum) {
       tempEndNum = startNum;
       startNum = endNum;
