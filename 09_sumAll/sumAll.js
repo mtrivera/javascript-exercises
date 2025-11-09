@@ -1,8 +1,9 @@
 const sumAll = function(startNum, endNum) {
 
   const isPositiveNums = [startNum, endNum].every(num => num > 0);
+  const isIntegerNums = [startNum, endNum].every(num => Number.isInteger(num));
 
-  if (isPositiveNums) {
+  if (isPositiveNums && isIntegerNums) {
     if (startNum > endNum) {
       tempEndNum = startNum;
       startNum = endNum;
