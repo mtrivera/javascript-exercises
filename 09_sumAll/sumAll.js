@@ -2,8 +2,9 @@ const sumAll = function(startNum, endNum) {
 
   const isPositiveNums = [startNum, endNum].every(num => num > 0);
   const isIntegerNums = [startNum, endNum].every(num => Number.isInteger(num));
+  const isTypeNums = [startNum, endNum].every(num => typeof num === 'number');
 
-  if (isPositiveNums && isIntegerNums) {
+  if (isPositiveNums && isIntegerNums && isTypeNums) {
     if (startNum > endNum) {
       tempEndNum = startNum;
       startNum = endNum;
